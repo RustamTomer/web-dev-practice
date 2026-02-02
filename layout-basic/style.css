@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color : rgb(28, 19, 148);
+    --secondary-color: rgba(99, 92, 185, 0.895);
+    --text-color: white;
+}
+
+body{
+    background-color: var(--secondary-color);
+}
+
+header{
+    background-color: var(--primary-color);
+    padding: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav ul li{
+    display: inline;
+    list-style: none;
+    padding: 50px;
+    font-family: "Poppins", "sans-serif";
+    font-weight: 500;
+}
+
+ul li a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.container{
+    --primary-color: rgb(132, 143, 188);
+    background-color: var(--primary-color);
+    width: 100vw;
+    height: 70vh;
+    display: flow-root;
+}
+
+.inner-container{
+    --primary-color: rgb(38, 35, 80);
+    background-color: var(--primary-color);
+    margin-top: 80px;
+}
+
+#box1{
+    float:left;
+    width: 500px;
+    height: 350px;
+    margin-left: 180px;
+}
+
+#box2{
+    float: right;
+    width: 500px;
+    height: 350px;
+    margin-right: 200px;
+}
+
+.welcome{
+    background-color: black;
+    width: 70vw;
+    height: 300px;
+    margin: 50px 0 50px 200px;
+    border-radius: 100px;
+}
+
+.circle{
+    position: fixed;
+    top: 635px;      /* tune this to match your screenshot */
+    left: 60px;     /* tune this */
+    z-index: 1000;
+}
