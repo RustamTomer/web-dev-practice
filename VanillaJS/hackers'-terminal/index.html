@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80vw;
+            height: 80vh;
+            color: lightgreen;
+            font-family: monospace;
+            margin: 10px 10px;
+        }
+        .dot{
+            opacity: 0;
+            animation: blink 1.4s infinite;
+        }
+        .dot1{animation-delay: 0s;}
+        .dot2{animation-delay: 0.4s;}
+        .dot3{animation-delay: 0.8s;}
+        @keyframes blink{
+            0% {opacity: 0;}
+            25% {opacity: 1;}
+            100% {opacity: 0;}
+        }
+</style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
