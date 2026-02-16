@@ -62,6 +62,7 @@ body {
 .right {
     width: 75vw;
     margin: 12px 0;
+    position: relative;
     /* max-height: 100vh; */
     /* overflow: scroll; */
 }
@@ -77,7 +78,7 @@ body {
 
 .spotifyPlaylists {
     padding: 16px;
-    position: relative;
+    /* position: relative; */
 }
 
 .cardContainer {
@@ -156,4 +157,18 @@ body {
 .logInBtn:hover {
     font-weight: bolder;
     font-size: 18px;
+}
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(139, 193, 139);
+    width: 100%;
+    padding: 12px;
+}
+
+.songButtons{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
 }
