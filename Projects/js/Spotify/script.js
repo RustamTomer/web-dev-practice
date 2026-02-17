@@ -3,30 +3,38 @@ async function getSongs() {
     let response = await a.text();
     let div = document.createElement('div');
     div.innerHTML = response;
-    console.log(div);
     let as = div.getElementsByTagName('a');
-    console.log(as);
     let songs = [];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith('.mp3')) {
-            // 1. Decode the entire URL first to handle %20 and special characters
-            let decodedURI = decodeURIComponent(element.href);
-            // 2. Split by both / and \ (using a Regular Expression)
-            let parts = decodedURI.split(/\/|\\/);
-            // 3. Take the very last part of that split (the filename)
-            let fileName = parts.pop();
-            // 4. Push it directly into your final songs array
-            songs.push(fileName);
+            songs.push(element.href.split('%5Csongs%5C')[1]);
         }
     }
     return songs;
 }
 
 async function main() {
-    // Get the list of cleaned song URLs
+    //get the list of all the songs    
     let songs = await getSongs();
-    console.log(songs);
+
+    // show all the songs in the playlist
+    let songUl = document.querySelector('.songList').getElementsByTagName('ul')[0];
+    for (const song of songs) {
+        songUl.innerHTML = songUl.innerHTML + `<li>
+                            <img class="invert" src="music.svg" alt="">
+                            <div class="info">
+                                <div>${song.replaceAll("%20", " ")}</div>
+                                <div>Vicky</div>
+                            </div>
+                            <div class="playNow">
+                                <span>Play Now</span>
+                                <img class="invert" src="play.svg" alt="">
+                            </div>
+                        </li>`
+    }
+
+    
 }
 
 main();
